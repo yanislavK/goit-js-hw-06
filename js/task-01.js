@@ -1,19 +1,10 @@
-// liCategoriesRef.forEach(item => {
-//   const ulHeading = item.querySelector(`h2`);
-//   const ulItem = item.querySelectorAll(`li`);
-//   console.log(
-//     `Category: ${ulHeading.textContent}.
-// Elements: ${ulItem.length}`
-//   );
-// });
+const ul = document.querySelector(`#categories`)
+const items = [...ul.children]
+console.log(`Number of categories:`,items.length);
 
-const categoriesRef = document.querySelector('#categories');
-const liCategoriesRef = Array.from(categoriesRef.children);
-console.log(`Number of categories:`, liCategoriesRef.length);
-
-liCategoriesRef.forEach(item => {
-  const ulHeading = item.firstElementChild;
-
-  const ulItem = item.querySelectorAll('li');
-  console.log(`Category: ${ulHeading.textContent}. Elements: ${ulItem.length}`);
-});
+items.forEach(item => {
+  const heading = item.firstElementChild
+  
+  const li = item.querySelectorAll(`li`)
+  console.log(`Category:${heading.textContent} Elements:${li.length} `);
+})
